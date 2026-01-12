@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dys6gqkrrwjuw"]
+
+[ext_resource type="Script" uid="uid://k5ylf61p81ue" path="res://scenes/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://pftjuqobisf2" path="res://scenes/game/characters/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://xij0fxllggis" path="res://scenes/core/character/character_blackboard.gd" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="3_sugp2"]
+
+[sub_resource type="Resource" id="Resource_sugp2"]
+script = ExtResource("2_0wfyh")
+metadata/_custom_type_script = "uid://xij0fxllggis"
+
+[sub_resource type="Resource" id="Resource_jyhfs"]
+script = ExtResource("2_0wfyh")
+device_index = 1
+metadata/_custom_type_script = "uid://xij0fxllggis"
+
+[node name="Main" type="Node2D" unique_id=2142871125 node_paths=PackedStringArray("player_one", "player_two", "player_one_move_label", "player_two_move_label", "player_one_aim_label", "player_two_aim_label")]
+script = ExtResource("1_jyhfs")
+player_one = NodePath("Player")
+player_two = NodePath("Player2")
+player_one_move_label = NodePath("CanvasLayer/Label3")
+player_two_move_label = NodePath("CanvasLayer/Label4")
+player_one_aim_label = NodePath("CanvasLayer/Label5")
+player_two_aim_label = NodePath("CanvasLayer/Label6")
+
+[node name="Player" parent="." unique_id=300647794 instance=ExtResource("1_o5qli")]
+position = Vector2(61, 133)
+blackboard = SubResource("Resource_sugp2")
+
+[node name="Player2" parent="." unique_id=1370413886 instance=ExtResource("1_o5qli")]
+position = Vector2(176, 133)
+blackboard = SubResource("Resource_jyhfs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=36893967]
+anchor_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=360887665]
+
+[node name="Virtual Joystick" parent="CanvasLayer" unique_id=775827127 instance=ExtResource("3_sugp2")]
+offset_left = 28.0
+offset_top = -80.0
+offset_right = 150.0
+offset_bottom = 29.0
+scale = Vector2(0.5, 0.5)
+clampzone_size = 30.0
+action_left = "move_left_0"
+action_right = "move_right_0"
+action_up = "move_up_0"
+action_down = "move_down_0"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=691547312]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Player 1:
+WASD"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1056235414]
+offset_left = 421.0
+offset_right = 635.0
+offset_bottom = 49.0
+text = "Player 2:
+Left Arrow, Right, Up, Down"
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=439492926]
+offset_top = 68.0
+offset_right = 88.0
+offset_bottom = 91.0
+text = "Movement:"
+
+[node name="Label4" type="Label" parent="CanvasLayer" unique_id=1133439533]
+offset_left = 420.0
+offset_top = 68.0
+offset_right = 508.0
+offset_bottom = 91.0
+text = "Movement:"
+
+[node name="Label5" type="Label" parent="CanvasLayer" unique_id=1022656910]
+offset_top = 91.0
+offset_right = 88.0
+offset_bottom = 114.0
+text = "Aim:"
+
+[node name="Label6" type="Label" parent="CanvasLayer" unique_id=1801925648]
+offset_left = 420.0
+offset_top = 91.0
+offset_right = 508.0
+offset_bottom = 114.0
+text = "Aim:"

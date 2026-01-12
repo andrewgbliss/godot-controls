@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://pftjuqobisf2"]
+
+[ext_resource type="Script" uid="uid://he0afna1eilc" path="res://scenes/core/character/character_controller.gd" id="1_hx28b"]
+[ext_resource type="Script" uid="uid://c48jtox4ix61q" path="res://scenes/core/character/scripts/controls/player_controls.gd" id="2_g7505"]
+[ext_resource type="Script" uid="uid://0u52vsjxqacs" path="res://scenes/core/character/scripts/character_movement.gd" id="3_774tr"]
+[ext_resource type="Texture2D" uid="uid://dp1hheqmx48v2" path="res://scenes/core/character/img/block.png" id="4_g7505"]
+[ext_resource type="Texture2D" uid="uid://iy021d8gnrks" path="res://scenes/core/character/img/crosshairs.png" id="4_lho7s"]
+[ext_resource type="Texture2D" uid="uid://bxqd1qybg36cl" path="res://scenes/core/character/img/circle.png" id="5_dmcgn"]
+[ext_resource type="Script" uid="uid://2iv8he2mshdo" path="res://scenes/core/character/scripts/controls/debug_aim_sprite.gd" id="6_lho7s"]
+[ext_resource type="Script" uid="uid://dpf4v7m6s10vt" path="res://scenes/core/character/scripts/character_triggers.gd" id="6_xp3x1"]
+[ext_resource type="PackedScene" uid="uid://d17olfcfpmvyg" path="res://scenes/game/projectiles/bullet.tscn" id="7_8wi8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_774tr"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D" unique_id=300647794 node_paths=PackedStringArray("controls")]
+motion_mode = 1
+script = ExtResource("1_hx28b")
+controls = NodePath("PlayerControls")
+metadata/_custom_type_script = "uid://he0afna1eilc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=322403261]
+shape = SubResource("RectangleShape2D_774tr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878701108]
+texture = ExtResource("4_g7505")
+
+[node name="PlayerControls" type="Node" parent="." unique_id=1745234253 node_paths=PackedStringArray("touch_sprite")]
+script = ExtResource("2_g7505")
+aim_type = 1
+mouse_cursor = ExtResource("4_lho7s")
+touch_sprite = NodePath("../DebugTouchSprite")
+dash_on_double_tap = true
+metadata/_custom_type_script = "uid://c48jtox4ix61q"
+
+[node name="CharacterMovement" type="Node" parent="." unique_id=983648483]
+script = ExtResource("3_774tr")
+metadata/_custom_type_script = "uid://0u52vsjxqacs"
+
+[node name="CharacterTriggers" type="Node" parent="." unique_id=2101951457]
+script = ExtResource("6_xp3x1")
+trigger_left_projectile = ExtResource("7_8wi8w")
+trigger_right_projectile = ExtResource("7_8wi8w")
+bumper_left_projectile = ExtResource("7_8wi8w")
+bumper_right_projectile = ExtResource("7_8wi8w")
+metadata/_custom_type_script = "uid://dpf4v7m6s10vt"
+
+[node name="DebugAimSprite" type="Sprite2D" parent="." unique_id=591060521 node_paths=PackedStringArray("player")]
+texture = ExtResource("5_dmcgn")
+script = ExtResource("6_lho7s")
+player = NodePath("..")
+metadata/_custom_type_script = "uid://2iv8he2mshdo"
+
+[node name="DebugTouchSprite" type="Sprite2D" parent="." unique_id=826225373]
+texture = ExtResource("5_dmcgn")
+offset = Vector2(-4, -4)
