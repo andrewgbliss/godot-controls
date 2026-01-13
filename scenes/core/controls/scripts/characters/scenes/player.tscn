@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://pftjuqobisf2"]
 
-[ext_resource type="Script" uid="uid://he0afna1eilc" path="res://scenes/core/character/character_controller.gd" id="1_hx28b"]
-[ext_resource type="Script" uid="uid://c48jtox4ix61q" path="res://scenes/core/character/scripts/controls/player_controls.gd" id="2_g7505"]
-[ext_resource type="Script" uid="uid://0u52vsjxqacs" path="res://scenes/core/character/scripts/character_movement.gd" id="3_774tr"]
-[ext_resource type="Texture2D" uid="uid://dp1hheqmx48v2" path="res://scenes/core/character/img/block.png" id="4_g7505"]
-[ext_resource type="Texture2D" uid="uid://iy021d8gnrks" path="res://scenes/core/character/img/crosshairs.png" id="4_lho7s"]
-[ext_resource type="Texture2D" uid="uid://bxqd1qybg36cl" path="res://scenes/core/character/img/circle.png" id="5_dmcgn"]
-[ext_resource type="Script" uid="uid://2iv8he2mshdo" path="res://scenes/core/character/scripts/controls/debug_aim_sprite.gd" id="6_lho7s"]
-[ext_resource type="Script" uid="uid://dpf4v7m6s10vt" path="res://scenes/core/character/scripts/character_triggers.gd" id="6_xp3x1"]
-[ext_resource type="PackedScene" uid="uid://d17olfcfpmvyg" path="res://scenes/game/projectiles/bullet.tscn" id="7_8wi8w"]
+[ext_resource type="Script" uid="uid://he0afna1eilc" path="res://scenes/core/controls/scripts/characters/character_controller.gd" id="1_hx28b"]
+[ext_resource type="Script" uid="uid://c48jtox4ix61q" path="res://scenes/core/controls/scripts/controls/player_controls.gd" id="2_g7505"]
+[ext_resource type="Script" uid="uid://0u52vsjxqacs" path="res://scenes/core/controls/scripts/characters/character_movement.gd" id="3_774tr"]
+[ext_resource type="Texture2D" uid="uid://dp1hheqmx48v2" path="res://scenes/core/controls/img/block.png" id="4_g7505"]
+[ext_resource type="Texture2D" uid="uid://iy021d8gnrks" path="res://scenes/core/controls/img/crosshairs.png" id="4_lho7s"]
+[ext_resource type="Texture2D" uid="uid://bxqd1qybg36cl" path="res://scenes/core/controls/img/circle.png" id="5_dmcgn"]
+[ext_resource type="Script" uid="uid://2iv8he2mshdo" path="res://scenes/core/controls/scripts/controls/debug_aim_sprite.gd" id="6_lho7s"]
+[ext_resource type="Script" uid="uid://dpf4v7m6s10vt" path="res://scenes/core/controls/scripts/characters/character_triggers.gd" id="6_xp3x1"]
+[ext_resource type="PackedScene" uid="uid://d17olfcfpmvyg" path="res://scenes/core/controls/scripts/projectiles/bullet.tscn" id="7_8wi8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_774tr"]
 size = Vector2(16, 16)

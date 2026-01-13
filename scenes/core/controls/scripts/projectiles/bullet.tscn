@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d17olfcfpmvyg"]
 
-[ext_resource type="Texture2D" uid="uid://dp1hheqmx48v2" path="res://scenes/core/character/img/block.png" id="1_k7cer"]
-[ext_resource type="Script" uid="uid://bjp46mtxnvj8" path="res://scenes/game/projectiles/projectile.gd" id="1_o35s3"]
+[ext_resource type="Texture2D" uid="uid://dp1hheqmx48v2" path="res://scenes/core/controls/img/block.png" id="1_k7cer"]
+[ext_resource type="Script" uid="uid://bjp46mtxnvj8" path="res://scenes/core/controls/scripts/projectiles/projectile.gd" id="1_o35s3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o35s3"]
 size = Vector2(2, 2)
